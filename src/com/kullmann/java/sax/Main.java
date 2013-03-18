@@ -14,6 +14,13 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+/**
+ * The initial version of this code was fetched from http://www.javacodegeeks.com/2012/01/xml-parsing-using-saxparser-with.html
+ * Special thanks to Ganesh Tiwari for the example
+ * 
+ *
+ */
+
 public class Main extends DefaultHandler{
 
 	List<Book> bookL;
