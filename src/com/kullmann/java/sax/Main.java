@@ -54,11 +54,19 @@ public class Main extends DefaultHandler{
             System.out.println(tmpB.toString());
         }
     }
+    
+    /**
+     * ignores localName and uri
+     * elementName is the qName of parsed element
+     */
     @Override
     public void startElement(String s, String s1, String elementName, Attributes attributes) throws SAXException {
         // if current element is book , create new book
         // clear tmpValue on start of element
 
+//    	System.out.println("uri: "+s);
+//    	System.out.println("localName: "+s1);
+    	System.out.println("qName: "+elementName);
         if (elementName.equalsIgnoreCase("book")) {
             bookTmp = new Book();
             bookTmp.setId(attributes.getValue("id"));
@@ -68,6 +76,8 @@ public class Main extends DefaultHandler{
         if (elementName.equalsIgnoreCase("publisher")) {
             bookTmp.setPublisher(attributes.getValue("country"));
         }
+        if(elementName.equals("title"))
+        	System.out.println("title in startElement: " + tmpValue);
     }
     @Override
     public void endElement(String s, String s1, String element) throws SAXException {
